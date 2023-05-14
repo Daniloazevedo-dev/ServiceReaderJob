@@ -17,7 +17,10 @@ public class ServiceReaderJobConfig {
 
   @Bean
   public Job job(Step serviceReaderStep) {
-    return jobBuilderFactory.get("serviceReaderJob").start(serviceReaderStep).incrementer(new RunIdIncrementer())
+    return jobBuilderFactory
+    		.get("serviceReaderJob")
+    		.start(serviceReaderStep)
+    		.incrementer(new RunIdIncrementer())
         .build();
   }
 }

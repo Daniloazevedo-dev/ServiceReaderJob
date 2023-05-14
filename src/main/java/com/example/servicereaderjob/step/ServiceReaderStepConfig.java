@@ -21,7 +21,10 @@ public class ServiceReaderStepConfig {
 
   @Bean
   public Step step(ItemReader<User> reader, ItemWriter<User> writer) {
-    return stepBuilderFactory.get("serviceReaderStep").<User, User>chunk(chunkSize).reader(reader).writer(writer)
+    return stepBuilderFactory.get("serviceReaderStep")
+    		.<User, User>chunk(chunkSize)
+    		.reader(reader)
+    		.writer(writer)
         .build();
   }
 }
